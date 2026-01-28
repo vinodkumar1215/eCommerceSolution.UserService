@@ -17,6 +17,9 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
         RuleFor(temp => temp.PersonName)
             .NotEmpty().WithMessage("Person Name should not be empty")
             .MinimumLength(4).WithMessage("Person Name should be at least 4 characters");
+
+        RuleFor(temp => temp.Gender)
+            .IsInEnum().WithMessage("Invalid Gender Option");
 }
 
 }
